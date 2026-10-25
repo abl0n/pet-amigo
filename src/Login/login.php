@@ -20,13 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $usuario = $stmt->fetch();
 
         if ($usuario && password_verify($senha, $usuario['senha'])) {
-            $_SESSION['usuario'] = [
-                'id'       => $usuario['id'],
-                'nome'     => $usuario['nome'],
-                'email'    => $usuario['email'],
-                'telefone' => $usuario['telefone'],
-                'endereco' => $usuario['endereco'],
-            ];
+                $_SESSION['usuario'] = [
+                    'id'       => $usuario['id'],
+                    'nome'     => $usuario['nome'],
+                    'email'    => $usuario['email'],
+                    'telefone' => $usuario['telefone'],
+                    'endereco' => $usuario['endereco'],
+                    'tipo'     => $usuario['tipo'] // <-- ADICIONE ESTA LINHA
+                ];
             header("Location: ../Home/home.php");
             exit();
         } else {

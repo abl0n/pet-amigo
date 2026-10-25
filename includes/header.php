@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-$base = $base ?? '';
+$base = $base ?? '/pet-amigo-main'; // Garante o caminho base
 ?>
 <header class="header">
     <section>
@@ -19,15 +19,26 @@ $base = $base ?? '';
 
         <nav class="navbar right-menu">
             <?php if (isset($_SESSION['usuario'])): ?>
+                
+                <!-- Se for admin, mostra o Painel Admin -->
+                <?php if (isset($_SESSION['usuario']['tipo']) && $_SESSION['usuario']['tipo'] === 'admin'): ?>
+                    <a href="<?= $base ?>/src/Admin/dashboard.php" style="color: #f1c40f;">
+                        <i class="fas fa-user-shield"></i> Painel Admin
+                    </a>
+                <?php endif; ?>
+
                 <a href="<?= $base ?>/src/Cadastro/meus-animais.php">
                     <i class="fas fa-paw"></i> Meus Animais
                 </a>
+                
                 <a href="<?= $base ?>/src/Cadastro/minha-conta.php">
                     <i class="fas fa-user"></i> Minha Conta
                 </a>
+
                 <a href="<?= $base ?>/src/Login/logout.php">
                     <i class="fas fa-sign-out-alt"></i> Sair (<?= htmlspecialchars(explode(' ', $_SESSION['usuario']['nome'])[0]) ?>)
                 </a>
+                
             <?php else: ?>
                 <a href="<?= $base ?>/src/Cadastro/cadastrogeral.php">
                     <i class="fas fa-user-plus"></i> Cadastro
