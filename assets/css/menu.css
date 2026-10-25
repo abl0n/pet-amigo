@@ -1,0 +1,193 @@
+/* ============================================
+   MENU.CSS - Apenas o específico do menu
+   Requer: base.css + components.css
+   ============================================ */
+
+.menu {
+    max-width: 1200px;
+    margin: 120px auto 4rem;
+    padding: 0 2rem;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.box {
+    background: var(--bg-dark);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    background: var(--bg-dark-2);
+}
+
+.box img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin: 0 auto 1rem;
+    border: 2px solid var(--border-color);
+}
+
+.box h3 { font-size: 1.5rem; color: #fff; margin-bottom: 1rem; }
+.box .price { font-size: 1.1rem; color: var(--color-primary); font-weight: bold; margin-bottom: 1rem; }
+.box p { color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; }
+
+@media (max-width: 768px) {
+    .menu { margin-top: 150px; }
+    .box-container { grid-template-columns: 1fr; }
+}
+
+.animal-details {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+}
+.animal-details p { margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; }
+.animal-details i { width: 16px; text-align: center; }
+.btn-adotar { background: linear-gradient(135deg, #e74c3c, #c0392b); margin-top: 1rem; }
+.btn-adotar:hover { background: linear-gradient(135deg, #c0392b, #a93226); transform: translateY(-2px); }
+.btn-login { background: linear-gradient(135deg, #3498db, #2980b9); margin-top: 1rem; }
+.btn-login:hover { background: linear-gradient(135deg, #2980b9, #21618c); transform: translateY(-2px); }
+.box { display: flex; flex-direction: column; height: 100%; }
+.box .btn { margin-top: auto; align-self: center; width: 90%; text-align: center; }
+
+.animal-details {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+}
+.animal-details p { margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; }
+.animal-details i { width: 16px; text-align: center; }
+.btn-adotar { background: linear-gradient(135deg, #e74c3c, #c0392b); margin-top: 1rem; }
+.btn-adotar:hover { background: linear-gradient(135deg, #c0392b, #a93226); }
+.btn-login { background: linear-gradient(135deg, #3498db, #2980b9); margin-top: 1rem; }
+.btn-login:hover { background: linear-gradient(135deg, #2980b9, #21618c); }
+.box { display: flex; flex-direction: column; height: 100%; }
+.box .btn { margin-top: auto; align-self: center; width: 90%; text-align: center; }
+
+
+/* ---------- BOTÕES DE AÇÃO (Editar/Excluir) ---------- */
+.animal-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-action {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-edit {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+.btn-edit:hover {
+    background: linear-gradient(135deg, #2980b9, #21618c);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.btn-delete:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Preview de imagem em editar-animal.php */
+.imagem-atual {
+    display: inline-block;
+    padding: 8px;
+    background: #1a1a1a;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-top: 0.5rem;
+}
+
+.imagem-atual img {
+    max-width: 200px;
+    height: auto;
+    border-radius: var(--radius-sm);
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .animal-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .btn-action {
+        width: 100%;
+    }
+}
+
+.home-container {
+    margin-top: 120px;
+    min-height: 400px;           /* ← ALTURA MÍNIMA DO BANNER */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('../../assets/img/principal.png') center/cover no-repeat;
+    position: relative;
+}
+
+.home-container section#home {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.home-container .content h3 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.home-container .content p {
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}

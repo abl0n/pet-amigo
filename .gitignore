@@ -1,0 +1,71 @@
+# ============================================
+# PETAMIGO - Arquivos que NÃO devem ir pro Git
+# ============================================
+
+# --------------------------------------------
+# Variáveis de ambiente e configs locais
+# --------------------------------------------
+.env
+.env.local
+config/database.local.php
+
+# --------------------------------------------
+# Uploads temporários dos usuários (arquivos gerados pelo upload)
+# Formato: uniqid() gera nomes hexadecimais como "6ac57b4604917.png"
+# --------------------------------------------
+assets/img/animais/6ac*.png
+assets/img/animais/6ac*.jpg
+assets/img/animais/6ac*.jpeg
+assets/img/animais/6ac*.gif
+assets/img/animais/6ac*.webp
+
+# --------------------------------------------
+# Backups locais do banco
+# --------------------------------------------
+database/petamigo_bd.sql
+database/*_backup.sql
+database/backup_*.sql
+
+# --------------------------------------------
+# Arquivos de teste e debug
+# --------------------------------------------
+teste*.php
+test_*.php
+debug_*.php
+*.log
+
+# --------------------------------------------
+# IDE e editores
+# --------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+
+# --------------------------------------------
+# Sistema operacional
+# --------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# --------------------------------------------
+# Arquivos compactados (backups)
+# --------------------------------------------
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# --------------------------------------------
+# Dependências (se houver futuramente)
+# --------------------------------------------
+node_modules/
+vendor/
+
+# --------------------------------------------
+# Arquivo legado (usa tabela que não existe mais)
+# --------------------------------------------
+src/Cadastro/carregar_racas.php

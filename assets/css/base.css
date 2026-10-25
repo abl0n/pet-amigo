@@ -1,0 +1,108 @@
+/* ============================================
+   BASE.CSS - Reset, variáveis e animações globais
+   Incluir em TODAS as páginas
+   ============================================ */
+
+/* Variáveis de design (mude aqui e reflete em tudo) */
+:root {
+    /* Cores principais */
+    --color-primary:      #3498db;
+    --color-primary-dark: #2980b9;
+    --color-danger:       #e74c3c;
+    --color-danger-dark:  #c0392b;
+    --color-success:      #2ecc71;
+    --color-success-dark: #27ae60;
+    --color-warning:      #f39c12;
+
+    /* Neutros */
+    --bg-black:      #000000;
+    --bg-dark:       #1a1a1a;
+    --bg-dark-2:     #2a2a2a;
+    --bg-dark-3:     #3a3a3a;
+    --border-color:  #333333;
+    --text-primary:  #ffffff;
+    --text-secondary:#cccccc;
+    --text-muted:    #999999;
+
+    /* Gradientes */
+    --gradient-brand: linear-gradient(135deg, var(--color-primary), var(--color-danger));
+    --gradient-btn:   linear-gradient(135deg, var(--color-primary), #2c3e50);
+
+    /* Espaçamento e layout */
+    --header-height: 90px;
+    --radius-sm: 5px;
+    --radius-md: 10px;
+    --radius-lg: 20px;
+    --radius-pill: 30px;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-md: 0 5px 15px rgba(255,255,255,0.1);
+    --shadow-lg: 0 15px 30px rgba(255,255,255,0.2);
+    --shadow-primary: 0 4px 15px rgba(52,152,219,0.3);
+}
+
+/* Reset universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-primary);
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ---- Animações globais ---- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromTop {
+    from { opacity: 0; transform: translateY(-50px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---- Scrollbar global ---- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-brand);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-danger-dark));
+}
+
+/* Ajuste global: compensa o header fixo */
+.home-container {
+    margin-top: 120px;
+}

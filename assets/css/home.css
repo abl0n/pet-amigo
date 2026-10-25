@@ -1,0 +1,150 @@
+/* ============================================
+   HOME.CSS - Apenas o específico da home
+   Requer: base.css + components.css
+   ============================================ */
+
+.home-container {
+    margin-top: 100px;
+    padding: 8rem 0;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('../img/principal.png') center/cover no-repeat;
+    position: relative;
+    animation: slideInFromTop 1s ease-out;
+}
+
+#home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+#home .content h3 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+#home .content p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+#home .btn {
+    animation: fadeInUp 0.8s ease-out 0.7s both;
+    background: linear-gradient(135deg, var(--color-danger), var(--color-primary));
+    border: 2px solid #fff;
+}
+
+/* Sobre na home */
+.about {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.container-image { text-align: center; }
+
+.container-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+    border: 3px solid var(--border-color);
+}
+
+.container-image img:hover { transform: scale(1.02); }
+
+.content { padding: 2rem 0; }
+
+.content h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--color-primary);
+    padding-left: 1rem;
+    animation: fadeInLeft 0.8s ease-out 0.5s both;
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-align: justify;
+    line-height: 1.8;
+    animation: fadeInLeft 0.8s ease-out 0.7s both;
+}
+
+/* Seção Menu na home */
+.menu {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.box {
+    background: var(--bg-dark);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    background: var(--bg-dark-2);
+}
+
+.box img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin: 0 auto 1rem;
+    border: 2px solid var(--border-color);
+}
+
+.box h3 { font-size: 1.5rem; color: #fff; margin-bottom: 1rem; }
+.box .description { font-size: 1rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5; }
+
+@media (max-width: 768px) {
+    .home-container { margin-top: 150px; padding: 4rem 0; }
+    #home .content h3 { font-size: 2.5rem; }
+    #home .content p { font-size: 1.2rem; }
+    .row { grid-template-columns: 1fr; gap: 2rem; }
+    .content h3 { font-size: 1.5rem; }
+    .content p { font-size: 1rem; }
+    .box-container { grid-template-columns: 1fr; }
+}

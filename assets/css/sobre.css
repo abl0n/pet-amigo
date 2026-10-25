@@ -1,0 +1,112 @@
+/* ============================================
+   SOBRE.CSS
+   Requer: base.css + components.css
+   ============================================ */
+
+main {
+    margin-top: 100px;
+    padding: 2rem 0;
+}
+
+.about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.tittle {
+    color: #2c3e50;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.container-image { text-align: center; }
+
+.container-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.container-image img:hover { transform: scale(1.02); }
+
+.content { padding: 2rem 0; }
+
+.content h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--color-primary);
+    padding-left: 1rem;
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #555;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.values {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 4rem 0;
+    margin-top: 4rem;
+    border-radius: var(--radius-lg);
+}
+
+.values-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+.values-grid,
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card,
+.team-member {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover,
+.team-member:hover { transform: translateY(-5px); }
+
+.value-card h4,
+.team-member h4 { color: #2c3e50; font-size: 1.5rem; margin-bottom: 1rem; }
+.value-card p,
+.team-member p { color: #666; line-height: 1.6; }
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 5px solid var(--color-primary);
+}
+
+.team { padding: 4rem 0; animation: fadeInUp 1.2s ease-out; }
+
+@media (max-width: 768px) {
+    main { margin-top: 150px; }
+    .row { grid-template-columns: 1fr; gap: 2rem; }
+    .content h3 { font-size: 1.5rem; }
+    .content p { font-size: 1rem; }
+    .values-grid, .team-grid { grid-template-columns: 1fr; }
+}
